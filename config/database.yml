@@ -1,0 +1,22 @@
+default: &default
+  adapter: mysql
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  user: root
+  password: <%=ENV['DATABASE_PASSWORD']%>
+  database: people_manager_development
+
+test:
+  <<: *default
+  user: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  database: people_manager_test
+
+production:
+  <<: *default
+  user: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  database: people_manager

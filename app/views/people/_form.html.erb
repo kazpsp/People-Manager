@@ -1,0 +1,11 @@
+<%= simple_form_for(@person) do |f| %>
+ 	<%= f.input :picture %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :job %>
+    <%= f.input :bio %>
+    <%= f.input :gender, collection: ["M", "F"] %>
+    <%= f.input :birthdate, as: "string", input_html: { class: "datepicker"} %>
+    <%= f.submit class: "btn btn-primary" %>
+<% end %>

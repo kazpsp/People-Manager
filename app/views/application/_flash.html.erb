@@ -1,0 +1,13 @@
+<% flash.each do |name, msg| %>
+<div class="flash-alert alert alert-dismissable alert-<%= name == "notice" ? "success" : "danger" %>">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%if msg.kind_of?(Array)%>
+    <% msg.each do |m| %>
+      <%=m%><br />
+    <%end%>
+  <%else%>
+    <%=msg%>
+  <%end%>
+</div>
+<% end %>
+
